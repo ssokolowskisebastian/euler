@@ -3,18 +3,30 @@
 from timer_utils import timer
 
 
-@timer #~O(n*10^n)
+def make_palindrome(i):
+    s = str(i)
+    return int(s + s[::-1])
+
+
+def is_valid(pal, lower, upper):
+    for d in range(upper, lower, -1):
+        if pal % d == 0:
+            q = pal // d
+            if lower < q <= upper:
+                return True
+        if d * d < pal:
+            break
+    return False
+
+
+@timer  # ~O(10^2*n) optimized brute force
 def solution(n=3):
-    upper = 10**n
+    upper = 10**n - 1
     lower = 10 ** (n - 1) - 1
     for i in range(upper, lower, -1):
-        s = str(i)
-        pal = int(s + s[::-1])
-        for d in range(upper, lower, -1):
-            if d * d < pal:
-                break
-            if pal % d == 0 and lower < pal // d < upper:
-                return pal
+        pal = make_palindrome(i)
+        if is_valid(pal, lower, upper):
+            return pal
     return None
 
 
