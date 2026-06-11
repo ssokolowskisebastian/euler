@@ -2,7 +2,7 @@
 from timer_utils import timer
 
 
-@timer #O(1)
+@timer  # O(1) using summation identities
 def solution(n=100):
     sum_n = n * (n + 1) // 2
     sum_sq = n * (n + 1) * (2 * n + 1) // 6
