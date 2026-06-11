@@ -5,9 +5,11 @@ from euler_problems.prime_methods import prime_sieve
 from timer_utils import timer
 
 
-@timer #O(nloglogn)
-def solution(n = 10_000):
-    limit = int(n * (math.log(n) + math.log(math.log(n)))) # estimate for the n-th prime.
+@timer  # O(nloglogn) upper bound prime number theorem and Eratosthenes sieve
+def solution(n=10_000):
+    limit = int(
+        n * (math.log(n) + math.log(math.log(n)))
+    )  # estimate for the n-th prime.
     return prime_sieve(limit)[n]
 
 
