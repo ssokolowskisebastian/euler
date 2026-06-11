@@ -8,7 +8,7 @@ with open("../../euler_files/euler0008") as f:
 digits_list = [int(d) for d in digits]
 
 
-@timer
+@timer  # O(n)
 def solution(dgs_arr=digits_list, dgs_nums=13):
     product = 1
     zero_count = 0
