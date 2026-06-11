@@ -3,7 +3,7 @@ from euler_problems.prime_methods import prime_sieve
 from timer_utils import timer
 
 
-@timer #O(n)
+@timer  # O(nloglogn) Prime sieve + exp-based LCM
 def solution(n=20):
     result = 1
     primes = prime_sieve(n)
