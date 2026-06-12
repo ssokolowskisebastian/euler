@@ -13,5 +13,4 @@ def solution(n=4_000_000):
 
     return total
 
-
 solution()  # result: 4613732 took: 0.000005s
