@@ -6,7 +6,7 @@ from timer_utils import timer
 def solution(limit=10**3):
     def multiples_sum(k):
         m = (limit - 1) // k
-        return k * m * (m + 1) // 2
+        return k * m * (m + 1) // 2 #k(1 + 2 + ... + m) = k * m(m+1) / 2
 
     return multiples_sum(3) + multiples_sum(5) - multiples_sum(15)
 
