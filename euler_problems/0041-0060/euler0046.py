@@ -3,13 +3,16 @@ from timer_utils import timer
 
 
 def is_goldbach(n, primes):
-    sq = 2
+    #2(k+1)^2 = 2k^2 + 4k + 2 =>
+    # step = 4k+2, start = 2 * k =>
+    # step = 6 && start = 2,  for k = 1
+    start = 2
     step = 6
 
-    while sq < n:
-        if n - sq in primes:
+    while start  < n:
+        if n - start in primes:
             return True
-        sq += step
+        start += step
         step += 4
 
     return False
