@@ -1,3 +1,4 @@
+#What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 from euler_problems.sieve_methods import prime_sieve
 from timer_utils import timer
 
