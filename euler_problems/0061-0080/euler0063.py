@@ -1,5 +1,3 @@
-import itertools
-import math
 
 from timer_utils import timer
 
@@ -10,7 +8,7 @@ def solution():
     n = 1
     while True:
         x = 10 ** ((n - 1) / n)
-        count = 9 - int(x) + (x == int(x))
+        count = 9 - (ix := int(x)) + (x == ix)
         if count <= 0:
             return total
         total += count
