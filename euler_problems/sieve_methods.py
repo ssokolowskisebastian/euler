@@ -10,6 +10,28 @@ def is_prime(n):  # O(n^0.5)
     return True
 
 
+def prime():
+    yield 2
+    ps = [2]
+
+    x = 3
+    while True:
+        is_p = True
+
+        for p in ps:
+            if p * p > x:
+                break
+            if x % p == 0:
+                is_p = False
+                break
+
+        if is_p:
+            ps.append(x)
+            yield x
+
+        x += 2
+
+
 def prime_sieve(n):  # O(n log log n)
     sieve = [True] * ((n + 1) // 2)
     sieve[0] = [False]
